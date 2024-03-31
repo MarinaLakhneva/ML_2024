@@ -35,13 +35,13 @@ def charts(k):
     ax.set_title('Clusters ', fontsize=20)
     ax.set_xlabel('PC 1', fontsize=15)
     ax.set_ylabel('PC 2', fontsize=15)
-    colors = ['#EE0000', '#FF6103', '#FFFF00', '#00FF7F', '#FF34B3', '#4B0082'] # 6 был '#008080'
+    colors = ['#EE0000', '#FFFF00', '#006400']
     for t in range(0, k):
         probability = np.zeros(len(result[0]))
         for j in range(0, len(result[0])):
             probability[j] = result[t][j]
         ax.scatter(x, y, s=100, alpha=probability, color=colors[t], edgecolors="black")
-    ax.legend(["1", "2", "3", "4", "5", "6", "7"])
+    ax.legend(["1", "2", "3"])
     for t in range(0, k):
         ax.get_legend().legend_handles[t].set_alpha(1)
     plt.show()
